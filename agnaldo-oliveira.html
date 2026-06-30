@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agnaldo Oliveira — Psicopedagogia, ABA e Neuropsicopedagogia</title>
+<meta name="description" content="Agnaldo Oliveira — Pedagogo, Psicopedagogo ABPp/SE nº 730, Especialista ABA e Neuropsicopedagogo. Atendimento especializado para o desenvolvimento cognitivo e a aprendizagem de crianças e adolescentes.">
+<meta property="og:title" content="Agnaldo Oliveira — Psicopedagogia, ABA e Neuropsicopedagogia">
+<meta property="og:description" content="Cada avanço importa. Atendimento especializado em psicopedagogia, ABA e neuropsicopedagogia para o desenvolvimento real de crianças e adolescentes.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Agnaldo Oliveira",
+  "jobTitle": "Psicopedagogo e Neuropsicopedagogo",
+  "description": "Pedagogo, Psicopedagogo ABPp/SE nº 730, Especialista ABA e Neuropsicopedagogo, atuando no desenvolvimento cognitivo e aprendizagem de crianças e adolescentes.",
+  "sameAs": ["https://www.instagram.com/agnaldoneuropp"]
+}
+</script>
+<style>
+  /* ============================================================
+     DESIGN TOKENS
+     ============================================================ */
+  :root{
+    --navy: #183B5B;
+    --navy-deep: #0F2841;
+    --sage: #7FA99B;
+    --sage-soft: #E4EDE9;
+    --gold: #C8A96B;
+    --gold-soft: #F1E6D2;
+    --paper: #FBF9F4;
+    --bg: #F7F8FA;
+    --white: #FFFFFF;
+    --ink: #2B2B2B;
+    --ink-soft: #5B6068;
+    --line: rgba(24,59,91,0.14);
+
+    --display: "Fraunces", Georgia, serif;
+    --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --hand: "Caveat", cursive;
+
+    --maxw: 1180px;
+    --radius: 4px;
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--display); font-weight:500; margin:0; color:var(--navy-deep);}
+  p{margin:0;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  :focus-visible{
+    outline:2.5px solid var(--gold);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:auto;
+    background:var(--navy); color:var(--white);
+    padding:12px 20px; z-index:1000; border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0; top:0;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 22px;} }
+
+  .eyebrow{
+    font-family:var(--body); font-weight:600; font-size:12.5px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--sage);
+  }
+  .eyebrow::before{content:"— "; color:var(--gold);}
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--body); font-weight:600; font-size:15px;
+    padding:15px 28px; border-radius:3px; border:1.5px solid transparent;
+    text-decoration:none; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--navy); color:var(--white);
+    box-shadow:0 1px 0 rgba(0,0,0,0.05);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(15,40,65,0.45); background:var(--navy-deep);}
+  .btn-ghost{
+    background:transparent; color:var(--navy); border-color:var(--line);
+  }
+  .btn-ghost:hover{ border-color:var(--navy); transform:translateY(-2px);}
+  .btn svg{width:16px; height:16px;}
+
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
+  header.site-nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(247,248,250,0.86);
+    backdrop-filter:blur(10px) saturate(1.2);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:78px;}
+  .brand{ display:flex; flex-direction:column; line-height:1; text-decoration:none;}
+  .brand-name{ font-family:var(--display); font-size:19px; font-weight:600; color:var(--navy-deep);}
+  .brand-tag{ font-family:var(--hand); font-size:14px; color:var(--sage); margin-top:2px;}
+  nav.nav-links{ display:flex; align-items:center; gap:34px;}
+  nav.nav-links a{
+    font-size:14.5px; font-weight:500; text-decoration:none; color:var(--ink-soft);
+    position:relative; padding:4px 0;
+  }
+  nav.nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px;
+    background:var(--gold); transition:width .3s var(--ease);
+  }
+  nav.nav-links a:hover::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:18px;}
+  .hamburger{ display:none; background:none; border:none; padding:8px;}
+  .hamburger span{ display:block; width:22px; height:2px; background:var(--navy); margin:5px 0; transition:.3s;}
+
+  @media (max-width:880px){
+    nav.nav-links{
+      position:fixed; top:78px; left:0; right:0; background:var(--paper);
+      flex-direction:column; align-items:flex-start; gap:0;
+      padding:8px 22px 24px; border-bottom:1px solid var(--line);
+      transform:translateY(-110%); opacity:0; transition:transform .35s var(--ease), opacity .3s ease;
+      pointer-events:none;
+    }
+    nav.nav-links.open{ transform:translateY(0); opacity:1; pointer-events:auto;}
+    nav.nav-links a{ width:100%; padding:14px 0; border-bottom:1px solid var(--line); font-size:16px;}
+    .hamburger{ display:block;}
+    .nav-cta .btn-primary-label{ display:none;}
+  }
+
+  /* ============================================================
+     HERO — asymmetric, growth-path signature
+     ============================================================ */
+  .hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(640px 420px at 88% -8%, rgba(127,169,155,0.16), transparent 70%),
+      var(--bg);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px;
+    align-items:center; padding:96px 0 88px; min-height:640px;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px); line-height:1.08; letter-spacing:-0.01em;
+    margin:18px 0 22px; max-width:13ch;
+  }
+  .hero h1 em{ font-style:italic; color:var(--sage); font-weight:500;}
+  .hero-sub{
+    font-size:17.5px; color:var(--ink-soft); max-width:46ch; margin-bottom:34px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:38px;}
+  .hero-credline{
+    display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-soft);
+  }
+  .hero-credline .dot{ width:5px; height:5px; border-radius:50%; background:var(--gold);}
+
+  .hero-art{ position:relative; height:480px;}
+  .path-svg{ width:100%; height:100%; overflow:visible;}
+  .path-line{
+    fill:none; stroke:var(--sage); stroke-width:2.5; stroke-linecap:round;
+    stroke-dasharray:900; stroke-dashoffset:900;
+    animation:draw 2.2s var(--ease) .3s forwards;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .path-dot{ fill:var(--navy); opacity:0; animation:pop .5s var(--ease) forwards; }
+  .path-dot.gold{ fill:var(--gold); }
+  .path-label{
+    position:absolute; font-family:var(--hand); font-size:19px; color:var(--navy);
+    opacity:0; animation:fadein .6s ease forwards;
+    transform:rotate(-2deg);
+  }
+  @keyframes pop{ from{opacity:0; transform:scale(0);} to{opacity:1; transform:scale(1);} }
+  @keyframes fadein{ to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .path-line{ stroke-dashoffset:0; animation:none;}
+    .path-dot, .path-label{ opacity:1; animation:none;}
+  }
+
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; padding:56px 0 48px;}
+    .hero-art{ height:300px; order:-1;}
+    .hero h1{ max-width:none;}
+  }
+
+  /* ============================================================
+     REVEAL ON SCROLL
+     ============================================================ */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in{ opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none;} }
+
+  section{ padding:108px 0; }
+  @media (max-width:640px){ section{ padding:72px 0;} }
+  .section-head{ max-width:640px; margin-bottom:56px;}
+  .section-head h2{ font-size:clamp(28px,3.4vw,40px); margin-top:14px; line-height:1.18;}
+  .section-head p{ color:var(--ink-soft); font-size:16px; margin-top:16px; max-width:54ch;}
+
+  /* ============================================================
+     SOBRE
+     ============================================================ */
+  .about{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .about-grid{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px; align-items:center;}
+  .about-frame{
+    position:relative; aspect-ratio:4/5; border-radius:3px;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .about-frame::before{
+    content:""; position:absolute; inset:14px; border:1px solid rgba(255,255,255,0.18);
+  }
+  .about-mono{ font-family:var(--display); color:var(--white); font-size:78px; letter-spacing:.04em;}
+  .about-frame .about-tag{
+    position:absolute; bottom:24px; left:24px; right:24px; font-family:var(--hand);
+    color:var(--gold-soft); font-size:16px;
+  }
+  .about-copy p{ color:var(--ink-soft); font-size:16.5px; margin-bottom:18px;}
+  .about-copy p:first-of-type{ font-family:var(--display); font-size:21px; color:var(--navy-deep); line-height:1.5; font-style:italic;}
+
+  /* ============================================================
+     CREDENTIALS — diploma cards
+     ============================================================ */
+  .cred-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:980px){ .cred-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cred-grid{ grid-template-columns:1fr;} }
+  .cred-card{
+    position:relative; background:var(--white); border:1px solid var(--line);
+    padding:30px 24px 26px; border-radius:3px; overflow:hidden;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .cred-card:hover{ transform:translateY(-5px); box-shadow:0 18px 34px -18px rgba(15,40,65,0.28);}
+  .cred-card::before{
+    content:""; position:absolute; top:-22px; right:-22px; width:54px; height:54px;
+    background:var(--gold); transform:rotate(45deg);
+  }
+  .cred-card .cred-num{
+    font-family:var(--hand); font-size:15px; color:var(--sage); display:block; margin-bottom:14px;
+  }
+  .cred-card h3{ font-size:18px; margin-bottom:8px;}
+  .cred-card p{ font-size:14px; color:var(--ink-soft);}
+
+  /* ============================================================
+     ESPECIALIDADES — bento
+     ============================================================ */
+  .specialty-bento{
+    display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:150px; gap:18px;
+  }
+  .spec-card{
+    border-radius:3px; padding:26px; display:flex; flex-direction:column; justify-content:flex-end;
+    border:1px solid var(--line); background:var(--white);
+    transition:transform .35s var(--ease), border-color .35s ease;
+  }
+  .spec-card:hover{ transform:translateY(-4px); border-color:var(--sage);}
+  .spec-card svg{ width:30px; height:30px; stroke:var(--navy); margin-bottom:auto;}
+  .spec-card h3{ font-size:18px; margin-bottom:6px;}
+  .spec-card p{ font-size:13.5px; color:var(--ink-soft);}
+  .spec-card.lg{ grid-column:span 3; grid-row:span 2;}
+  .spec-card.lg{ background:var(--navy); border-color:var(--navy);}
+  .spec-card.lg h3, .spec-card.lg p{ color:var(--white);}
+  .spec-card.lg p{ color:rgba(255,255,255,0.75);}
+  .spec-card.lg svg{ stroke:var(--gold);}
+  .spec-card.md{ grid-column:span 3; grid-row:span 1;}
+  .spec-card.sm{ grid-column:span 2; grid-row:span 1;}
+  @media (max-width:880px){
+    .specialty-bento{ grid-template-columns:1fr 1fr; grid-auto-rows:auto;}
+    .spec-card.lg, .spec-card.md, .spec-card.sm{ grid-column:span 2; grid-row:auto; min-height:140px;}
+  }
+  @media (max-width:560px){
+    .specialty-bento{ grid-template-columns:1fr;}
+    .spec-card.lg, .spec-card.md, .spec-card.sm{ grid-column:span 1;}
+  }
+
+  /* ============================================================
+     PÚBLICO ATENDIDO — chips
+     ============================================================ */
+  .audience{ background:var(--sage-soft);}
+  .chip-row{ display:flex; flex-wrap:wrap; gap:14px;}
+  .chip{
+    border:1.5px solid var(--navy); color:var(--navy); background:transparent;
+    padding:13px 22px; border-radius:30px; font-size:14.5px; font-weight:500;
+    transition:background .3s ease, color .3s ease;
+  }
+  .chip:hover{ background:var(--navy); color:var(--white);}
+
+  /* ============================================================
+     DIFERENCIAIS
+     ============================================================ */
+  .diff-list{ border-top:1px solid var(--line);}
+  .diff-row{
+    display:grid; grid-template-columns:90px 1fr 1.4fr; gap:28px; align-items:start;
+    padding:32px 0; border-bottom:1px solid var(--line);
+  }
+  .diff-row .diff-mark{ font-family:var(--hand); font-size:30px; color:var(--gold);}
+  .diff-row h3{ font-size:19px;}
+  .diff-row p{ color:var(--ink-soft); font-size:15px;}
+  @media (max-width:720px){
+    .diff-row{ grid-template-columns:50px 1fr; }
+    .diff-row p{ grid-column:2; }
+  }
+
+  /* ============================================================
+     PROCESSO — timeline along the path
+     ============================================================ */
+  .process{ background:var(--navy-deep); color:var(--white);}
+  .process .section-head h2{ color:var(--white);}
+  .process .section-head p{ color:rgba(255,255,255,0.7);}
+  .timeline{ position:relative; padding-left:40px;}
+  .timeline::before{
+    content:""; position:absolute; left:9px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(var(--gold), var(--sage));
+  }
+  .tl-step{ position:relative; padding-bottom:46px;}
+  .tl-step:last-child{ padding-bottom:0;}
+  .tl-step::before{
+    content:""; position:absolute; left:-40px; top:2px; width:20px; height:20px; border-radius:50%;
+    background:var(--navy-deep); border:2.5px solid var(--gold);
+  }
+  .tl-step h3{ color:var(--white); font-size:19px; margin-bottom:6px;}
+  .tl-step p{ color:rgba(255,255,255,0.68); font-size:15px; max-width:56ch;}
+  .tl-step .tl-eyebrow{ font-family:var(--hand); color:var(--sage); font-size:16px; display:block; margin-bottom:4px;}
+
+  /* ============================================================
+     DEPOIMENTOS — carousel
+     ============================================================ */
+  .testi-wrap{ position:relative; max-width:760px; margin:0 auto;}
+  .testi-track{ overflow:hidden;}
+  .testi-slides{ display:flex; transition:transform .6s var(--ease);}
+  .testi-slide{ flex:0 0 100%; padding:4px;}
+  .testi-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:3px;
+    padding:44px; text-align:center;
+  }
+  .testi-quote{ font-family:var(--display); font-style:italic; font-size:21px; line-height:1.55; color:var(--navy-deep);}
+  .testi-name{ margin-top:22px; font-weight:600; font-size:14.5px;}
+  .testi-role{ font-size:13px; color:var(--ink-soft);}
+  .testi-dots{ display:flex; justify-content:center; gap:9px; margin-top:28px;}
+  .testi-dot{ width:8px; height:8px; border-radius:50%; background:var(--line); border:none; padding:0;}
+  .testi-dot.active{ background:var(--gold); width:22px; border-radius:4px; transition:.3s;}
+  .testi-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); background:var(--white);
+    border:1px solid var(--line); width:42px; height:42px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .testi-arrow:hover{ border-color:var(--navy);}
+  .testi-arrow.prev{ left:-54px;}
+  .testi-arrow.next{ right:-54px;}
+  @media (max-width:880px){ .testi-arrow{ display:none;} }
+
+  /* ============================================================
+     FAQ
+     ============================================================ */
+  .faq-list{ max-width:760px;}
+  .faq-item{ border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; background:none; border:none; text-align:left; padding:24px 0;
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    font-family:var(--display); font-size:18px; color:var(--navy-deep);
+  }
+  .faq-q .icon{ position:relative; width:18px; height:18px; flex:none;}
+  .faq-q .icon::before, .faq-q .icon::after{
+    content:""; position:absolute; background:var(--navy); transition:transform .3s var(--ease);
+  }
+  .faq-q .icon::before{ left:0; top:8px; width:18px; height:2px;}
+  .faq-q .icon::after{ left:8px; top:0; width:2px; height:18px;}
+  .faq-item.open .faq-q .icon::after{ transform:scaleY(0);}
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .4s var(--ease);}
+  .faq-a-inner{ padding-bottom:24px; color:var(--ink-soft); font-size:15px; max-width:62ch;}
+
+  /* ============================================================
+     CTA FINAL
+     ============================================================ */
+  .final-cta{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--white); text-align:center; position:relative; overflow:hidden;
+  }
+  .final-cta::before{
+    content:""; position:absolute; width:480px; height:480px; border-radius:50%;
+    background:radial-gradient(circle, rgba(200,169,107,0.18), transparent 70%);
+    top:-200px; right:-140px;
+  }
+  .final-cta h2{ color:var(--white); font-size:clamp(30px,4vw,46px); max-width:18ch; margin:0 auto 18px;}
+  .final-cta p{ color:rgba(255,255,255,0.72); max-width:48ch; margin:0 auto 38px; font-size:16.5px;}
+  .final-cta .btn-primary{ background:var(--gold); color:var(--navy-deep);}
+  .final-cta .btn-primary:hover{ background:#d8bd86;}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.6); padding:56px 0 32px; font-size:13.5px;}
+  .foot-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .foot-brand{ font-family:var(--display); color:var(--white); font-size:19px;}
+  .foot-links{ display:flex; gap:28px; flex-wrap:wrap;}
+  .foot-links a{ text-decoration:none; color:rgba(255,255,255,0.65); transition:color .2s;}
+  .foot-links a:hover{ color:var(--gold);}
+  .foot-bottom{ padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  /* WhatsApp floating button */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:90;
+    background:var(--navy); color:var(--white); width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    box-shadow:0 10px 26px -8px rgba(15,40,65,0.5); transition:transform .3s var(--ease);
+  }
+  .wa-float:hover{ transform:scale(1.08);}
+  .wa-float svg{ width:26px; height:26px;}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#main">
+      <span class="brand-name">Agnaldo Oliveira</span>
+      <span class="brand-tag">psicopedagogia &amp; neurodesenvolvimento</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#processo">Processo</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" id="navWaBtn" href="#" target="_blank" rel="noopener">
+        <span class="btn-primary-label">Agendar atendimento</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Psicopedagogia · ABA · Neuropsicopedagogia</p>
+        <h1>Transformando <em>desenvolvimento</em> em possibilidades reais</h1>
+        <p class="hero-sub">Atendimento especializado para crianças e adolescentes, com abordagem científica e plano individualizado — porque cada avanço, por menor que pareça, importa.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" id="heroWaBtn" href="#" target="_blank" rel="noopener">
+            Agendar avaliação
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#especialidades">Conhecer serviços</a>
+        </div>
+        <div class="hero-credline">
+          <span>Pedagogo</span><span class="dot"></span>
+          <span>Psicopedagogo ABPp/SE nº 730</span><span class="dot"></span>
+          <span>Especialista ABA</span>
+        </div>
+      </div>
+
+      <!-- Signature element: hand-drawn growth path with milestone notes -->
+      <div class="hero-art" aria-hidden="true">
+        <svg class="path-svg" viewBox="0 0 420 480" preserveAspectRatio="xMidYMid meet">
+          <path class="path-line" d="M30 420 C 90 430, 110 330, 150 320 C 210 305, 200 220, 260 200 C 320 180, 300 90, 380 60" />
+          <circle class="path-dot" cx="30" cy="420" r="6" style="animation-delay:.5s"/>
+          <circle class="path-dot" cx="150" cy="320" r="6" style="animation-delay:1.0s"/>
+          <circle class="path-dot" cx="260" cy="200" r="6" style="animation-delay:1.5s"/>
+          <circle class="path-dot gold" cx="380" cy="60" r="7" style="animation-delay:2.0s"/>
+        </svg>
+        <span class="path-label" style="left:2%; top:84%; animation-delay:.8s;">primeiro contato</span>
+        <span class="path-label" style="left:30%; top:60%; animation-delay:1.3s;">novas estratégias</span>
+        <span class="path-label" style="left:54%; top:36%; animation-delay:1.8s;">mais autonomia</span>
+        <span class="path-label" style="left:74%; top:6%; animation-delay:2.3s; color:var(--sage);">evolução real</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE
+       ============================================================ -->
+  <section class="about" id="sobre">
+    <div class="wrap about-grid">
+      <div class="reveal about-frame">
+        <span class="about-mono">A.O.</span>
+        <span class="about-tag">"acreditar no potencial de cada criança é o primeiro passo"</span>
+      </div>
+      <div class="reveal about-copy">
+        <p class="eyebrow">Sobre</p>
+        <h2 style="font-size:30px; margin:14px 0 22px;">Uma trajetória dedicada à aprendizagem</h2>
+        <p>Acredito que aprender não segue um único caminho — e é justamente nas diferenças que encontramos as melhores estratégias.</p>
+        <p>Como Pedagogo, Psicopedagogo (ABPp/SE nº 730), Especialista em ABA e Neuropsicopedagogo, dedico minha atuação a compreender como cada criança e adolescente pensa, sente e se desenvolve, unindo rigor científico a um olhar verdadeiramente humano.</p>
+        <p>Meu propósito é simples: transformar dificuldades em estratégias, e estratégias em autonomia real para a vida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CREDENCIAIS
+       ============================================================ -->
+  <section id="credenciais">
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Formação</p>
+        <h2>Credenciais que sustentam cada atendimento</h2>
+        <p>Uma base sólida de formação, em constante atualização, para oferecer intervenções fundamentadas e seguras.</p>
+      </div>
+      <div class="cred-grid">
+        <div class="reveal cred-card">
+          <span class="cred-num">01</span>
+          <h3>Pedagogo</h3>
+          <p>Formação em Pedagogia, com base nos processos de ensino, aprendizagem e desenvolvimento infantil.</p>
+        </div>
+        <div class="reveal cred-card">
+          <span class="cred-num">02</span>
+          <h3>Psicopedagogo</h3>
+          <p>Registro ABPp/SE nº 730 — atuação clínica e institucional voltada às dificuldades de aprendizagem.</p>
+        </div>
+        <div class="reveal cred-card">
+          <span class="cred-num">03</span>
+          <h3>Especialista ABA</h3>
+          <p>Aplicação da Análise do Comportamento Aplicada no suporte ao desenvolvimento comportamental.</p>
+        </div>
+        <div class="reveal cred-card">
+          <span class="cred-num">04</span>
+          <h3>Neuropsicopedagogo</h3>
+          <p>Integração entre neurociência e pedagogia para entender como cada cérebro aprende melhor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ESPECIALIDADES — bento grid
+       ============================================================ -->
+  <section id="especialidades" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Especialidades</p>
+        <h2>Áreas de atuação</h2>
+        <p>Cada caso pede uma combinação diferente de olhares — por isso a atuação integra diferentes frentes da psicopedagogia.</p>
+      </div>
+      <div class="specialty-bento">
+        <div class="reveal spec-card lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v18M5 7c2-2 5-2 7 0s5 2 7 0M5 17c2-2 5-2 7 0s5 2 7 0"/></svg>
+          <h3>Psicopedagogia</h3>
+          <p>Investigação e intervenção sobre os processos de aprendizagem, identificando bloqueios e construindo novos caminhos.</p>
+        </div>
+        <div class="reveal spec-card md">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+          <h3>ABA</h3>
+          <p>Estratégias baseadas em evidências para o desenvolvimento de habilidades e comportamentos.</p>
+        </div>
+        <div class="reveal spec-card sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z"/></svg>
+          <h3>Neuropsicopedagogia</h3>
+          <p>O funcionamento cerebral a serviço de estratégias pedagógicas mais eficazes.</p>
+        </div>
+        <div class="reveal spec-card sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 11l3 3L22 4M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/></svg>
+          <h3>Avaliação</h3>
+          <p>Avaliação psicopedagógica completa como ponto de partida de qualquer plano de intervenção.</p>
+        </div>
+        <div class="reveal spec-card md">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg>
+          <h3>Desenvolvimento cognitivo</h3>
+          <p>Estímulo às funções executivas: atenção, memória, raciocínio e planejamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PÚBLICO ATENDIDO
+       ============================================================ -->
+  <section class="audience">
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Quem é atendido</p>
+        <h2>Um cuidado pensado para cada necessidade</h2>
+      </div>
+      <div class="reveal chip-row">
+        <span class="chip">Dificuldades de aprendizagem</span>
+        <span class="chip">TEA</span>
+        <span class="chip">TDAH</span>
+        <span class="chip">Atrasos cognitivos</span>
+        <span class="chip">Dificuldades escolares</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DIFERENCIAIS
+       ============================================================ -->
+  <section>
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Diferenciais</p>
+        <h2>O que sustenta cada intervenção</h2>
+      </div>
+      <div class="diff-list">
+        <div class="reveal diff-row">
+          <span class="diff-mark">a.</span>
+          <h3>Atendimento humanizado</h3>
+          <p>Cada criança é ouvida e respeitada em seu próprio ritmo — o vínculo vem antes da técnica.</p>
+        </div>
+        <div class="reveal diff-row">
+          <span class="diff-mark">b.</span>
+          <h3>Abordagem científica</h3>
+          <p>Intervenções fundamentadas em evidências, sem modismos, com revisão constante de resultados.</p>
+        </div>
+        <div class="reveal diff-row">
+          <span class="diff-mark">c.</span>
+          <h3>Plano individualizado</h3>
+          <p>Nenhum plano é genérico — cada estratégia nasce da avaliação real daquela criança.</p>
+        </div>
+        <div class="reveal diff-row">
+          <span class="diff-mark">d.</span>
+          <h3>Foco em evolução real</h3>
+          <p>Progresso mensurável e comunicado com clareza à família, passo a passo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROCESSO
+       ============================================================ -->
+  <section class="process" id="processo">
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Como funciona</p>
+        <h2>O caminho até a evolução</h2>
+        <p>Um processo claro, em cinco etapas, do primeiro contato ao acompanhamento contínuo.</p>
+      </div>
+      <div class="timeline">
+        <div class="reveal tl-step">
+          <span class="tl-eyebrow">passo um</span>
+          <h3>Contato</h3>
+          <p>Primeira conversa para entender a demanda da família e esclarecer dúvidas iniciais.</p>
+        </div>
+        <div class="reveal tl-step">
+          <span class="tl-eyebrow">passo dois</span>
+          <h3>Avaliação</h3>
+          <p>Avaliação psicopedagógica aprofundada para mapear potenciais e dificuldades reais.</p>
+        </div>
+        <div class="reveal tl-step">
+          <span class="tl-eyebrow">passo três</span>
+          <h3>Plano</h3>
+          <p>Construção de um plano de intervenção individualizado, com metas claras e mensuráveis.</p>
+        </div>
+        <div class="reveal tl-step">
+          <span class="tl-eyebrow">passo quatro</span>
+          <h3>Intervenção</h3>
+          <p>Sessões regulares aplicando as estratégias definidas, com ajustes contínuos.</p>
+        </div>
+        <div class="reveal tl-step">
+          <span class="tl-eyebrow">passo cinco</span>
+          <h3>Acompanhamento</h3>
+          <p>Reavaliações periódicas para garantir que a evolução seja real e duradoura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DEPOIMENTOS
+       ============================================================ -->
+  <section id="depoimentos">
+    <div class="wrap">
+      <div class="reveal section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <p class="eyebrow">Depoimentos</p>
+        <h2>Famílias que viram a evolução de perto</h2>
+      </div>
+      <div class="reveal testi-wrap">
+        <button class="testi-arrow prev" id="testiPrev" aria-label="Depoimento anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="testi-arrow next" id="testiNext" aria-label="Próximo depoimento">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="testi-track">
+          <div class="testi-slides" id="testiSlides">
+            <div class="testi-slide">
+              <div class="testi-card">
+                <p class="testi-quote">"Em poucos meses vimos uma diferença real na concentração e na confiança do nosso filho na escola."</p>
+                <p class="testi-name">Mãe de aluno, 8 anos</p>
+                <p class="testi-role">Acompanhamento em dificuldades de aprendizagem</p>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <p class="testi-quote">"O plano individualizado fez toda a diferença. Sentimos que cada sessão tinha um propósito claro."</p>
+                <p class="testi-name">Pai de aluna, 11 anos</p>
+                <p class="testi-role">Acompanhamento em TDAH</p>
+              </div>
+            </div>
+            <div class="testi-slide">
+              <div class="testi-card">
+                <p class="testi-quote">"Mais do que técnica, encontramos acolhimento. Isso mudou a forma como nosso filho encara a escola."</p>
+                <p class="testi-name">Mãe de aluno, 6 anos</p>
+                <p class="testi-role">Acompanhamento em TEA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-dots" id="testiDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section id="faq" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="reveal section-head">
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2>Perguntas que costumam surgir</h2>
+      </div>
+      <div class="reveal faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Como funciona a primeira avaliação?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A primeira etapa é uma conversa inicial para entender a demanda da família, seguida de uma avaliação psicopedagógica completa, que mapeia o perfil de aprendizagem da criança ou adolescente.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Qual a frequência recomendada das sessões?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A frequência é definida após a avaliação, de acordo com as necessidades específicas de cada caso — normalmente entre uma e duas sessões semanais.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            O atendimento é presencial ou online?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Entre em contato pelo WhatsApp para verificar a modalidade disponível e a melhor opção para o seu caso.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            A família participa do processo?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Sim. O envolvimento da família é parte fundamental do plano de intervenção, com orientações e devolutivas periódicas sobre a evolução.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="final-cta">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--sage);">Comece agora</p>
+      <h2>Cada avanço importa. Comece hoje.</h2>
+      <p>Dê o primeiro passo em direção a um desenvolvimento real — entre em contato e agende uma avaliação.</p>
+      <a class="btn btn-primary" id="finalWaBtn" href="#" target="_blank" rel="noopener">
+        Agendar atendimento via WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Agnaldo Oliveira</p>
+        <p style="margin-top:8px;">Pedagogo · Psicopedagogo ABPp/SE nº 730 · Especialista ABA · Neuropsicopedagogo</p>
+      </div>
+      <div class="foot-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://www.instagram.com/agnaldoneuropp" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Agnaldo Oliveira. Todos os direitos reservados.</span>
+      <span>Aracaju, SE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a class="wa-float" id="floatWaBtn" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.3.9.9-3.2-.2-.3C3.8 14.9 3.3 13.5 3.3 12c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.9 8.7-8.7 8.7z"/></svg>
+</a>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     CONFIG — update WhatsApp number before publishing
+     ============================================================ */
+  // Replace with the real number, format: country+area+number, digits only.
+  var WHATSAPP_NUMBER = "5579999999999"; // ⚠️ PLACEHOLDER — substitua pelo número real
+  var WHATSAPP_MESSAGE = "Olá, Agnaldo! Gostaria de agendar uma avaliação.";
+  var waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  ["navWaBtn","heroWaBtn","finalWaBtn","floatWaBtn"].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.setAttribute("href", waLink);
+  });
+
+  /* ============================================================
+     MOBILE NAV
+     ============================================================ */
+  var hamburger = document.getElementById("hamburger");
+  var navLinks = document.getElementById("navLinks");
+  hamburger.addEventListener("click", function(){
+    var open = navLinks.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  navLinks.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      navLinks.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* ============================================================
+     SCROLL REVEAL
+     ============================================================ */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ============================================================
+     FAQ ACCORDION
+     ============================================================ */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var btn = item.querySelector(".faq-q");
+    var panel = item.querySelector(".faq-a");
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(openItem){
+        if (openItem !== item){
+          openItem.classList.remove("open");
+          openItem.querySelector(".faq-q").setAttribute("aria-expanded","false");
+          openItem.querySelector(".faq-a").style.maxHeight = null;
+        }
+      });
+      if (isOpen){
+        item.classList.remove("open");
+        btn.setAttribute("aria-expanded","false");
+        panel.style.maxHeight = null;
+      } else {
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded","true");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ============================================================
+     TESTIMONIAL CAROUSEL
+     ============================================================ */
+  var slidesEl = document.getElementById("testiSlides");
+  var slides = slidesEl.children;
+  var dotsWrap = document.getElementById("testiDots");
+  var current = 0;
+  var autoplayId;
+
+  for (var i = 0; i < slides.length; i++){
+    var dot = document.createElement("button");
+    dot.className = "testi-dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", "Ir para depoimento " + (i+1));
+    (function(idx){ dot.addEventListener("click", function(){ goTo(idx); restartAutoplay(); }); })(i);
+    dotsWrap.appendChild(dot);
+  }
+  var dots = dotsWrap.children;
+
+  function goTo(idx){
+    current = (idx + slides.length) % slides.length;
+    slidesEl.style.transform = "translateX(-" + (current * 100) + "%)";
+    for (var j = 0; j < dots.length; j++){
+      dots[j].classList.toggle("active", j === current);
+    }
+  }
+  function restartAutoplay(){
+    clearInterval(autoplayId);
+    autoplayId = setInterval(function(){ goTo(current + 1); }, 6000);
+  }
+  document.getElementById("testiPrev").addEventListener("click", function(){ goTo(current - 1); restartAutoplay(); });
+  document.getElementById("testiNext").addEventListener("click", function(){ goTo(current + 1); restartAutoplay(); });
+  var testiWrap = document.querySelector(".testi-wrap");
+  testiWrap.addEventListener("mouseenter", function(){ clearInterval(autoplayId); });
+  testiWrap.addEventListener("mouseleave", restartAutoplay);
+  restartAutoplay();
+
+  /* basic touch swipe */
+  var touchStartX = 0;
+  slidesEl.addEventListener("touchstart", function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  slidesEl.addEventListener("touchend", function(e){
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40){ goTo(current + (dx < 0 ? 1 : -1)); restartAutoplay(); }
+  }, {passive:true});
+
+  /* ============================================================
+     FOOTER YEAR
+     ============================================================ */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
